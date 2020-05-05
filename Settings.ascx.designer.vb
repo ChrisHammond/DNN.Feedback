@@ -733,79 +733,79 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents ddlCaptchaBackgroundNoise As Global.System.Web.UI.WebControls.DropDownList
-        
+
         '''<summary>
-        '''plNoCaptcha control.
+        '''plReCaptcha control.
         '''</summary>
         '''<remarks>
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents plNoCaptcha As Global.System.Web.UI.UserControl
-        
+        Protected WithEvents plReCaptcha As Global.System.Web.UI.UserControl
+
         '''<summary>
-        '''chkNoCaptcha control.
+        '''chkReCaptcha control.
         '''</summary>
         '''<remarks>
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents chkNoCaptcha As Global.System.Web.UI.WebControls.CheckBox
-        
+        Protected WithEvents chkReCaptcha As Global.System.Web.UI.WebControls.CheckBox
+
         '''<summary>
-        '''plNoCaptchaSiteKey control.
+        '''plReCaptchaSiteKey control.
         '''</summary>
         '''<remarks>
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents plNoCaptchaSiteKey As Global.System.Web.UI.UserControl
-        
+        Protected WithEvents plReCaptchaSiteKey As Global.System.Web.UI.UserControl
+
         '''<summary>
-        '''txtNoCaptchaSiteKey control.
+        '''txtReCaptchaSiteKey control.
         '''</summary>
         '''<remarks>
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents txtNoCaptchaSiteKey As Global.System.Web.UI.WebControls.TextBox
-        
+        Protected WithEvents txtReCaptchaSiteKey As Global.System.Web.UI.WebControls.TextBox
+
         '''<summary>
-        '''valNoCaptchaSiteKey control.
+        '''valReCaptchaSiteKey control.
         '''</summary>
         '''<remarks>
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents valNoCaptchaSiteKey As Global.System.Web.UI.WebControls.RequiredFieldValidator
-        
+        Protected WithEvents valReCaptchaSiteKey As Global.System.Web.UI.WebControls.RequiredFieldValidator
+
         '''<summary>
-        '''plNoCaptchaSecretKey control.
+        '''plReCaptchaSecretKey control.
         '''</summary>
         '''<remarks>
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents plNoCaptchaSecretKey As Global.System.Web.UI.UserControl
-        
+        Protected WithEvents plReCaptchaSecretKey As Global.System.Web.UI.UserControl
+
         '''<summary>
-        '''txtNoCaptchaSecretKey control.
+        '''txtReCaptchaSecretKey control.
         '''</summary>
         '''<remarks>
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents txtNoCaptchaSecretKey As Global.System.Web.UI.WebControls.TextBox
-        
+        Protected WithEvents txtReCaptchaSecretKey As Global.System.Web.UI.WebControls.TextBox
+
         '''<summary>
-        '''valNoCaptchaSecretKey control.
+        '''valReCaptchaSecretKey control.
         '''</summary>
         '''<remarks>
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents valNoCaptchaSecretKey As Global.System.Web.UI.WebControls.RequiredFieldValidator
-        
+        Protected WithEvents valReCaptchaSecretKey As Global.System.Web.UI.WebControls.RequiredFieldValidator
+
         '''<summary>
         '''plRepeatSubmissionFilter control.
         '''</summary>

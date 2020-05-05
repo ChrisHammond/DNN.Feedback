@@ -183,18 +183,18 @@
             <asp:DropDownList ID="ddlCaptchaBackgroundNoise" runat="server"></asp:DropDownList>
         </div>
         <div class="dnnFormItem">
-            <dnn:label id="plNoCaptcha" runat="server" controlName="chkNoCaptcha" suffix=":"></dnn:label>
-            <asp:CheckBox ID="chkNoCaptcha" runat="server" CssClass="normal" AutoPostBack="true" CausesValidation="false" OnCheckedChanged="chkNoCaptcha_CheckedChanged" />
+            <dnn:label id="plReCaptcha" runat="server" controlName="chkReCaptcha" suffix=":"></dnn:label>
+            <asp:CheckBox ID="chkReCaptcha" runat="server" CssClass="normal" AutoPostBack="true" CausesValidation="false" OnCheckedChanged="chkReCaptcha_CheckedChanged" />
         </div>
         <div class="dnnFormItem">
-            <dnn:label id="plNoCaptchaSiteKey" runat="server" controlName="txtNoCaptchaSiteKey" suffix=":"></dnn:label>
-            <asp:TextBox ID="txtNoCaptchaSiteKey" runat="server" CssClass="normal" ></asp:TextBox>
-            <asp:RequiredFieldValidator id="valNoCaptchaSiteKey" resourcekey="valNoCaptchaSiteKey.ErrorMessage" ControlToValidate="txtNoCaptchaSiteKey" Display="Dynamic" CssClass="dnnFormMessage dnnFormError" ErrorMessage="<br />If you enable google NoCaptcha, you need to provide the Site Key" runat="server"></asp:RequiredFieldValidator>
+            <dnn:label id="plReCaptchaSiteKey" runat="server" controlName="txtReCaptchaSiteKey" suffix=":"></dnn:label>
+            <asp:TextBox ID="txtReCaptchaSiteKey" runat="server" CssClass="normal" ></asp:TextBox>
+            <asp:RequiredFieldValidator id="valReCaptchaSiteKey" resourcekey="valReCaptchaSiteKey.ErrorMessage" ControlToValidate="txtReCaptchaSiteKey" Display="Dynamic" CssClass="dnnFormMessage dnnFormError" ErrorMessage="<br />If you enable google ReCaptcha, you need to provide the Site Key" runat="server"></asp:RequiredFieldValidator>
         </div>
         <div class="dnnFormItem">
-            <dnn:label id="plNoCaptchaSecretKey" runat="server" controlName="txtNoCaptchaSecretKey" suffix=":"></dnn:label>
-            <asp:TextBox ID="txtNoCaptchaSecretKey" runat="server" CssClass="normal"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="valNoCaptchaSecretKey" resoucekey="valNoCaptchaSecretKey.ErrorMessage" ControlToValidate="txtNoCaptchaSecretKey" Display="Dynamic" CssClass="dnnFormMessage dnnFormError" ErrorMessage="<br />If you enable google NoCaptcha, you need to provide the Secret Key" runat="server"></asp:RequiredFieldValidator>
+            <dnn:label id="plReCaptchaSecretKey" runat="server" controlName="txtReCaptchaSecretKey" suffix=":"></dnn:label>
+            <asp:TextBox ID="txtReCaptchaSecretKey" runat="server" CssClass="normal"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="valReCaptchaSecretKey" resoucekey="valReCaptchaSecretKey.ErrorMessage" ControlToValidate="txtReCaptchaSecretKey" Display="Dynamic" CssClass="dnnFormMessage dnnFormError" ErrorMessage="<br />If you enable google ReCaptcha, you need to provide the Secret Key" runat="server"></asp:RequiredFieldValidator>
         </div>
         <div class="dnnFormItem">
             <dnn:label id="plRepeatSubmissionFilter" runat="server" controlname="rblRepeatSubmissionFilter" suffix=":"></dnn:label>

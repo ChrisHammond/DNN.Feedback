@@ -661,16 +661,16 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents ctlCaptcha As Global.DotNetNuke.Web.UI.WebControls.DnnCaptcha
-        
+
         '''<summary>
-        '''NoCaptchaDiv control.
+        '''ReCaptchaDiv control.
         '''</summary>
         '''<remarks>
         '''Auto-generated field.
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
-        Protected WithEvents NoCaptchaDiv As Global.System.Web.UI.WebControls.Panel
-        
+        Protected WithEvents ReCaptchaDiv As Global.System.Web.UI.WebControls.Panel
+
         '''<summary>
         '''cmdSend control.
         '''</summary>

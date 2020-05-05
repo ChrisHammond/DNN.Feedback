@@ -151,10 +151,10 @@ Namespace DotNetNuke.Modules.Feedback
         Private _akismetKey As String
         Private _akismetSendModerator As Boolean
 
-        ' Issue #22 NoCaptcha support
-        Private _useNoCaptcha As Boolean
-        Private _noCaptchaSiteKey As String
-        Private _noCaptchaSecretKey As String
+        ' Issue #22 ReCaptcha support
+        Private _useReCaptcha As Boolean
+        Private _ReCaptchaSiteKey As String
+        Private _ReCaptchaSecretKey As String
 
 #Region "Public ReadOnly Properties"
 
@@ -392,31 +392,31 @@ Namespace DotNetNuke.Modules.Feedback
             End Set
         End Property
 
-        ' Issue #22 NoCaptcha support
-        Public Property UseNoCaptcha() As Boolean
+        ' Issue #22 ReCaptcha support
+        Public Property UseReCaptcha() As Boolean
             Get
-                Return _useNoCaptcha
+                Return _useReCaptcha
             End Get
             Set(value As Boolean)
-                _useNoCaptcha = value
+                _useReCaptcha = value
             End Set
         End Property
 
-        Public Property NoCaptchaSiteKey() As String
+        Public Property ReCaptchaSiteKey() As String
             Get
-                Return _noCaptchaSiteKey
+                Return _ReCaptchaSiteKey
             End Get
             Set(value As String)
-                _noCaptchaSiteKey = value
+                _ReCaptchaSiteKey = value
             End Set
         End Property
 
-        Public Property NoCaptchaSecretKey() As String
+        Public Property ReCaptchaSecretKey() As String
             Get
-                Return _noCaptchaSecretKey
+                Return _ReCaptchaSecretKey
             End Get
             Set(value As String)
-                _noCaptchaSecretKey = value
+                _ReCaptchaSecretKey = value
             End Set
         End Property
         ' End of Issue #22
@@ -828,10 +828,10 @@ Namespace DotNetNuke.Modules.Feedback
                 _captchaLineNoise = GetCaptchaLineNoise()
                 _captchaBackgroundNoise = GetCaptchaBackgroundNoise()
 
-                'Issue #22 NoCaptcha support
-                _useNoCaptcha = GetSetting("Feedback_UseNoCaptcha", False)
-                _noCaptchaSiteKey = GetSetting("Feedback_NoCaptchaSiteKey", String.Empty)
-                _noCaptchaSecretKey = GetSetting("Feedback_NoCaptchaSecretKey", String.Empty)
+                'Issue #22 ReCaptcha support
+                _useReCaptcha = GetSetting("Feedback_UseReCaptcha", False)
+                _ReCaptchaSiteKey = GetSetting("Feedback_ReCaptchaSiteKey", String.Empty)
+                _ReCaptchaSecretKey = GetSetting("Feedback_ReCaptchaSecretKey", String.Empty)
 
                 _repeatSubmissionFilter = GetSetting("Feedback_RepeatSubmissionFilter", RepeatSubmissionFilters.None)
                 _repeatSubmissionInteval = GetSetting("Feedback_RepeatSubmissionInteval", 0)
@@ -1034,10 +1034,10 @@ Namespace DotNetNuke.Modules.Feedback
                 .UpdateModuleSetting(_moduleId, "Feedback_AkismetKey", _akismetKey)
                 .UpdateModuleSetting(_moduleId, "Feedback_AkismetSendModerator", _akismetSendModerator.ToString)
 
-                ' Issue #22 - add NoCaptcha support
-                .UpdateModuleSetting(_moduleId, "Feedback_UseNoCaptcha", _useNoCaptcha.ToString)
-                .UpdateModuleSetting(_moduleId, "Feedback_NoCaptchaSiteKey", _noCaptchaSiteKey)
-                .UpdateModuleSetting(_moduleId, "Feedback_NoCaptchaSecretKey", _noCaptchaSecretKey)
+                ' Issue #22 - add ReCaptcha support
+                .UpdateModuleSetting(_moduleId, "Feedback_UseReCaptcha", _useReCaptcha.ToString)
+                .UpdateModuleSetting(_moduleId, "Feedback_ReCaptchaSiteKey", _ReCaptchaSiteKey)
+                .UpdateModuleSetting(_moduleId, "Feedback_ReCaptchaSecretKey", _ReCaptchaSecretKey)
 
 
             End With

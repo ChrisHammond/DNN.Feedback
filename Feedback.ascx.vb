@@ -276,17 +276,17 @@ Namespace DotNetNuke.Modules.Feedback
                 SetRequiredVisibility(divTelephone, txtTelephone, CType(plTelephone, UserControls.LabelControl), valTelephone, MyConfiguration.TelephoneFieldVisibility)
                 SetRequiredVisibility(divMessage, txtBody, CType(plMessage, UserControls.LabelControl), valMessage, MyConfiguration.MessageFieldVisibility)
 
-                ' Issue #22 NoCaptcha support
+                ' Issue #22 ReCaptcha support
                 If MyConfiguration.CaptchaVisibility = Configuration.CaptchaVisibilities.AllUsers _
                        OrElse (MyConfiguration.CaptchaVisibility = Configuration.CaptchaVisibilities.AnonymousUsers AndAlso UserId = -1) Then
-                    If MyConfiguration.UseNoCaptcha AndAlso Not String.IsNullOrEmpty(MyConfiguration.NoCaptchaSiteKey) AndAlso Not String.IsNullOrEmpty(MyConfiguration.NoCaptchaSecretKey) Then
-                        divCaptcha.Visible = False                        
+                    If MyConfiguration.UseReCaptcha AndAlso Not String.IsNullOrEmpty(MyConfiguration.ReCaptchaSiteKey) AndAlso Not String.IsNullOrEmpty(MyConfiguration.ReCaptchaSecretKey) Then
+                        divCaptcha.Visible = False
 
-                        Dim _noCaptcha As New NoCaptcha()
-                        _noCaptcha.SiteKey = MyConfiguration.NoCaptchaSiteKey
-                        _noCaptcha.SecretKey = MyConfiguration.NoCaptchaSecretKey
-                        NoCaptchaDiv.Controls.Add(_noCaptcha)
-                        NoCaptchaDiv.Visible = True
+                        Dim _ReCaptcha As New ReCaptcha()
+                        _ReCaptcha.SiteKey = MyConfiguration.ReCaptchaSiteKey
+                        _ReCaptcha.SecretKey = MyConfiguration.ReCaptchaSecretKey
+                        ReCaptchaDiv.Controls.Add(_ReCaptcha)
+                        ReCaptchaDiv.Visible = True
                     Else
                         divCaptcha.Visible = True
                         ctlCaptcha.ErrorMessage = Localization.GetString("InvalidCaptcha", LocalResourceFile)
@@ -443,10 +443,10 @@ Namespace DotNetNuke.Modules.Feedback
 
             If Not Page.IsValid Then Exit Sub
 
-            'Issue #22 support for NoCaptcha
-            If NoCaptchaDiv.Controls.Count > 0 Then
-                Dim theCaptcha As NoCaptcha = DirectCast(NoCaptchaDiv.Controls.Item(0), NoCaptcha)
-                If NoCaptchaDiv.Visible AndAlso Not theCaptcha.Validate() Then Exit Sub
+            'Issue #22 support for ReCaptcha
+            If ReCaptchaDiv.Controls.Count > 0 Then
+                Dim theCaptcha As ReCaptcha = DirectCast(ReCaptchaDiv.Controls.Item(0), ReCaptcha)
+                If ReCaptchaDiv.Visible AndAlso Not theCaptcha.Validate() Then Exit Sub
             End If
 
             If Not divCaptcha.Visible OrElse ctlCaptcha.IsValid Then

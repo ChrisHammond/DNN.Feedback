@@ -202,16 +202,16 @@ Namespace DotNetNuke.Modules.Feedback
                     BindToEnum(GetType(Telerik.Web.UI.CaptchaBackgroundNoiseLevel), ddlCaptchaBackgroundNoise)
                     ddlCaptchaBackgroundNoise.Items.FindByValue(CType(MyConfiguration.CaptchaBackgroundNoise, String)).Selected = True
 
-                    ' Issue 22, NoCaptcha support
-                    chkNoCaptcha.Checked = MyConfiguration.UseNoCaptcha
-                    txtNoCaptchaSiteKey.Text = MyConfiguration.NoCaptchaSiteKey
-                    txtNoCaptchaSecretKey.Text = MyConfiguration.NoCaptchaSecretKey
-                    If MyConfiguration.UseNoCaptcha Then
-                        valNoCaptchaSiteKey.Enabled = True
-                        valNoCaptchaSecretKey.Enabled = True
+                    ' Issue 22, ReCaptcha support
+                    chkReCaptcha.Checked = MyConfiguration.UseReCaptcha
+                    txtReCaptchaSiteKey.Text = MyConfiguration.ReCaptchaSiteKey
+                    txtReCaptchaSecretKey.Text = MyConfiguration.ReCaptchaSecretKey
+                    If MyConfiguration.UseReCaptcha Then
+                        valReCaptchaSiteKey.Enabled = True
+                        valReCaptchaSecretKey.Enabled = True
                     Else
-                        valNoCaptchaSiteKey.Enabled = False
-                        valNoCaptchaSecretKey.Enabled = False
+                        valReCaptchaSiteKey.Enabled = False
+                        valReCaptchaSecretKey.Enabled = False
                     End If
 
                     rblRepeatSubmissionFilter.SelectedValue = CInt(MyConfiguration.RepeatSubmissionFilter).ToString
@@ -343,10 +343,10 @@ Namespace DotNetNuke.Modules.Feedback
                         .CaptchaLineNoise = CType(ddlCaptchaLineNoise.SelectedValue, Telerik.Web.UI.CaptchaLineNoiseLevel)
                         .CaptchaBackgroundNoise = CType(ddlCaptchaLineNoise.SelectedValue, Telerik.Web.UI.CaptchaBackgroundNoiseLevel)
 
-                        'Issue #22 NoCaptcha support
-                        .UseNoCaptcha = chkNoCaptcha.Checked
-                        .NoCaptchaSiteKey = txtNoCaptchaSiteKey.Text
-                        .NoCaptchaSecretKey = txtNoCaptchaSecretKey.Text
+                        'Issue #22 ReCaptcha support
+                        .UseReCaptcha = chkReCaptcha.Checked
+                        .ReCaptchaSiteKey = txtReCaptchaSiteKey.Text
+                        .ReCaptchaSecretKey = txtReCaptchaSecretKey.Text
 
                         .RepeatSubmissionFilter = CType(rblRepeatSubmissionFilter.SelectedValue, Configuration.RepeatSubmissionFilters)
                         .RepeatSubmissionInteval = Integer.Parse(txtMinSubmissionInteval.Text)
@@ -532,14 +532,14 @@ Namespace DotNetNuke.Modules.Feedback
             End If
         End Sub
 
-        ' Issue #22 NoCaptcha support
-        Protected Sub chkNoCaptcha_CheckedChanged(sender As Object, e As EventArgs)
-            If chkNoCaptcha.Checked Then
-                valNoCaptchaSiteKey.Enabled = True
-                valNoCaptchaSecretKey.Enabled = True
+        ' Issue #22 ReCaptcha support
+        Protected Sub chkReCaptcha_CheckedChanged(sender As Object, e As EventArgs)
+            If chkReCaptcha.Checked Then
+                valReCaptchaSiteKey.Enabled = True
+                valReCaptchaSecretKey.Enabled = True
             Else
-                valNoCaptchaSiteKey.Enabled = False
-                valNoCaptchaSecretKey.Enabled = False
+                valReCaptchaSiteKey.Enabled = False
+                valReCaptchaSecretKey.Enabled = False
             End If
         End Sub
 

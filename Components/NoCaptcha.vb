@@ -20,8 +20,8 @@ Namespace DotNetNuke.Modules.Feedback
         End Property
     End Class
 
-    <ToolboxData("<{0}:NoCaptcha runat=server><{0}:NoCaptcha>")>
-    Public Class NoCaptcha
+    <ToolboxData("<{0}:ReCaptcha runat=server><{0}:ReCaptcha>")>
+    Public Class ReCaptcha
         Inherits WebControl
 
         Dim ValidateResponseField As String = "g-recaptcha-response"
@@ -33,11 +33,11 @@ Namespace DotNetNuke.Modules.Feedback
         <Localizable(False)>
         Public Property SiteKey As String
             Get
-                Dim _siteKey As String = DirectCast(ViewState("_noCaptchaSiteKey"), [String])
+                Dim _siteKey As String = DirectCast(ViewState("_ReCaptchaSiteKey"), [String])
                 Return _siteKey
             End Get
             Set(value As String)
-                ViewState("_noCaptchaSiteKey") = value
+                ViewState("_ReCaptchaSiteKey") = value
             End Set
         End Property
 
@@ -47,21 +47,21 @@ Namespace DotNetNuke.Modules.Feedback
         <Localizable(False)>
         Public Property SecretKey As String
             Get
-                Dim _secretKey As String = DirectCast(ViewState("_noCaptchaSecretKey"), [String])
+                Dim _secretKey As String = DirectCast(ViewState("_ReCaptchaSecretKey"), [String])
                 Return _secretKey
             End Get
             Set(value As String)
-                ViewState("_noCaptchaSecretKey") = value
+                ViewState("_ReCaptchaSecretKey") = value
             End Set
         End Property
 
         Protected Overrides Sub RenderContents(writer As HtmlTextWriter)
             If Not String.IsNullOrEmpty(SiteKey) AndAlso Not String.IsNullOrEmpty(SecretKey) Then
-                Dim noCaptchaHTML As String = String.Format("<div class='g-recaptcha' data-sitekey='{0}'></div>", SiteKey)
+                Dim ReCaptchaHTML As String = String.Format("<div class='g-recaptcha' data-sitekey='{0}'></div>", SiteKey)
 
-                Dim noCaptchaScript As String = String.Format(" <script src=""https://www.google.com/recaptcha/api.js?hl={0}"" async defer></script>", LanguageCode)
-                writer.Write(noCaptchaHTML)
-                Me.Page.ClientScript.RegisterStartupScript(Me.GetType, "noCaptchaScript", noCaptchaScript, False)
+                Dim ReCaptchaScript As String = String.Format(" <script src=""https://www.google.com/recaptcha/api.js?hl={0}"" async defer></script>", LanguageCode)
+                writer.Write(ReCaptchaHTML)
+                Me.Page.ClientScript.RegisterStartupScript(Me.GetType, "ReCaptchaScript", ReCaptchaScript, False)
             End If
         End Sub
 
